@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="digivet.css">
+        
+        <script src="responsivevoice.js"></script>
+        <script src="jquery.min.js"></script>
+ 
+    </head>
+    <body>
+
+<h3>Hello and welcome to the DigiVet web application. Please select the species of your sick animal by tapping on its picture.</h3>
+        <textarea id="text">Hello and welcome to the DigiVett web application. Please select the species of your sick animal by tapping on its picture.</textarea>
+
+<select id="voiceselection"></select> 
+
+<input 
+onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+type="button" 
+class="button"
+/>
+
+<script>
+//Populate voice selection dropdown
+var voicelist = responsiveVoice.getVoices();
+
+var vselect = $("#voiceselection");
+
+$.each(voicelist, function() {
+        vselect.append($("<option />").val(this.name).text(this.name));
+});
+</script>
+        <img src="logo.gif" alt="DigiVet Logo" style="width:10%;height:15%;position:absolute;left:10px;top:-5px;">
+        <!-- 1st row verticaly centered text in the square columns -->
+        <div class="fit_screen">
+        <div class="square img_1-1">
+            <a class="click" href="question_cow_1.html" title="photo" id="img_1-1"></a>
+        </div>
+        <div class="square img_1-2">
+            <a class="click" href="question_guinea_fowl_1.html" title="photo" id="img_1-2"></a>
+        </div>
+        <div class="square img_1-3">
+            <a class="click" href="question_cow_1.html" title="photo" id="img_1-3"></a>
+        </div>
+
+        <!-- 2nd row verticaly centered images in square columns -->
+
+        <div class="square img_2-1"> 
+            <a class="click" href="question_cow_1.html" title="photo" id="img_2-1"></a>
+        </div>  
+        <div class="square img_2-2">
+            <a class="click" href="question_cow_1.html" title="photo" id="img_2-2"></a>
+        </div>
+        <div class="square img_2-3">
+            <a class="click" href="question_chicken_1.html" title="photo" id="img_2-3"></a>
+
+        </div>
+
+        <!-- 3rd row responsive images in background with centered content -->
+
+        <div class="square img_3-1">
+            <a class="click" href="question_chicken_1.html" title="photo" id="img_3-1"></a>
+        </div>
+        <div class="square img_3-2">
+            <a class="click" href="question_cow_1.html" title="photo" id="img_3-2"></a>
+        </div>
+        <div class="square img_3-3">
+            <a class="click" href="question_cow_1.html" title="photo" id="img_3-3"></a>
+
+        </div>
+        </div>
+        
+    </body>
+</html>
+
+
+    

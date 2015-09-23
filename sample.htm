@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Sample Page!</title>
+<script language="javascript">
+<!--
+function validateit()
+{
+temp = true;
+ if(document.form.name.value == '' || document.form.phone.value == '')
+	{
+	temp = false;
+	alert('Please fill out the Name and Phone field to continue...');
+	}
+ return temp;
+}
+//-->
+</script>
+</head>
+<body>
+<p align="center"><strong>INSTANT CALL BACK</strong><br>enter you name and number<br>and I will call you immediately.</p>
+            <form name="form" action="sampleproc.cfm" method="post" enctype="multipart/form-data" onSubmit="return validateit();">
+			<table width="300" border="0" align="center" cellpadding="2" cellspacing="0">       
+			  <tr> 
+                <td width="125" valign="middle"> <div align="right">Your Name:&nbsp; </div></td>
+                <td width="150" valign="top"><input type="text" name="name" onFocus="this.value=''" style="width:150px"></td>
+			    <td width="25" valign="middle"><div align="center">*</div></td>
+			  </tr>
+              <tr> 
+                <td valign="middle"> <div align="right">Phone Number:&nbsp; </div></td>
+                <td valign="top"><input type="text" name="phone" onFocus="this.value=''" style="width:150px" ></td>
+                <td valign="middle"><div align="center">*</div></td>
+              </tr>
+              <tr>
+                <td valign="top"><div align="right">
+                  </div></td>
+                <td valign="top"><div align="right">
+                  <input type="submit" name="Submit" value="Call Me">
+                </div></td>
+                <td valign="top">&nbsp;</td>
+              </tr>
+            </table>
+</form>
+</body>
+</html>

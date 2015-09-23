@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="outcome_anaplasmosis.css">    
+
+        <script src="responsivevoice.js"></script>
+        <script src="jquery.min.js"></script>     
+    </head>
+    <body>
+        <h2>Outcome: Anaplasmosis</h2>
+        <p>It seems that your cow has Anaplasmosis disease, an infectious blood disease caused by the ricke ttsial parasites Anaplasma marginale and Anaplasma centrale. This disease is not contagious, but is transmitted most commonly by ticks. Affected cattle either die or begin a recovery within 4 days after the first signs of the disease. Since this cow is detected during the early stages of the disease, it is best to contact a veterinary. Below, a list of the top 2 of best veterinarians has been listed. Please select the veterinarian you would like to contact.</p>
+        
+        <textarea id="text">It seems that your cow has Anaplasmosis disease, an infectious blood disease caused by the rickesttsial parasites Anaplasma marginale and Anaplasma centrale. This disease is not contagious, but is transmitted most commonly by ticks. Affected cattle either die or begin a recovery within 4 days after the first signs of the disease. Since this cow is detected during the early stages of the disease, it is best to contact a veterinary. Below, a list of the top 2 of best veterinarians has been listed. Please select the veterinarian you would like to contact.</textarea>
+
+        <select id="voiceselection"></select> 
+
+        <input 
+        onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+        type="button" 
+        class="button"
+        />
+
+        <script>
+        //Populate voice selection dropdown
+        var voicelist = responsiveVoice.getVoices();
+
+        var vselect = $("#voiceselection");
+
+        $.each(voicelist, function() {
+                vselect.append($("<option />").val(this.name).text(this.name));
+        });
+        </script>
+        <div class="fit_screen">
+        <div class="square img_1-1">
+            <a class="click" href="http://www.dierenkliniekdewetering.nl/" title="photo" id="img_1-1"></a>
+        </div>
+        <div class="square img_1-2">
+            <a class="click" href="http://www.mcvoordieren.nl/" title="photo" id="img_1-2"></a>
+        </div>
+        </div>
+        <div class="photo_text_1">
+        <p>Veterinarian dr.Kwadwo Nkrumah</p>
+        </div>       
+        <div class="photo_text_2">
+        <p>Veterinarian dr.Ebo Annan</p>
+        </div>
+    </body>
+    
+</html>

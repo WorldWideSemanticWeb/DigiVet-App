@@ -1,0 +1,133 @@
+
+
+html, body {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+body {
+  font-size: 1rem;
+  background: #fff;
+}
+
+h1, h2 {
+  margin: 0 0 1rem 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+#error {
+  color: #f00;
+  font-family: monospace;
+  transition: all 1s;
+}
+
+form {
+  display: flex;
+}
+
+input, button, code, p {
+  font-size: inherit;
+}
+
+#results {
+  background: #ccc;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 1s;
+  overflow-x: hidden;
+}
+
+#results:before {
+  position: absolute;
+  display: inline-block;
+  border: 1rem solid transparent;
+  border-bottom: 1rem solid #ccc;
+  margin-top: -3rem;
+  content: '';
+}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Privileged app</title>
+        <meta name="description" content="A privileged app stub">
+
+        <!--
+          viewport allows you to control how mobile browsers will render your content.
+          width=device-width tells mobile browsers to render your content across the
+          full width of the screen, without being zoomed out (by default it would render
+          it at a desktop width, then shrink it to fit.)
+          Read more about it here:
+          https://developer.mozilla.org/Mozilla/Mobile/Viewport_meta_tag
+        -->
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/app.css">
+
+        <!--
+        Inline JavaScript code is not allowed for privileged and certified apps,
+        due to Content Security Policy restrictions.
+        You can read more about it here: https://developer.mozilla.org/Apps/CSP
+        Plus keeping your JavaScript separated from your HTML is always a good practice!
+
+        We're also using the 'defer' attribute. This allows us to tell the browser that
+        it should not wait for this file to load before continuing to load the rest of
+        resources in the page. Then, once everything has been loaded, it will parse and
+        execute the deferred files.
+        Read about defer: https://developer.mozilla.org/Web/HTML/Element/script#attr-defer
+        -->
+        <script type="text/javascript" src="js/app.js" defer></script>
+
+        <!--
+        The following two lines are for loading the localisations library
+        and the localisation data-so people can use the app in their
+        own language (as long as you provide translations).
+        -->
+        <link rel="prefetch" type="application/l10n" href="data/locales.ini" />
+        <script type="text/javascript" src="js/libs/l10n.js" defer></script>
+    </head>
+    <body>
+       <div class="fit_screen">
+        <div class="square img_1-1">
+            <a class="click" href="question_screen.html" title="photo" id="img_1-1"></a>
+        </div>
+        <div class="square img_1-2">
+            <a class="click" href="http://en.wikipedia.org/wiki/Guineafowl" title="photo" id="img_1-2"></a>
+        </div>
+        <div class="square img_1-3">
+            <a class="click" href="http://en.wikipedia.org/wiki/Pig" title="photo" id="img_1-3"></a>
+        </div>
+
+        <!-- 2nd row verticaly centered images in square columns -->
+
+        <div class="square img_2-1"> 
+            <a class="click" href="http://en.wikipedia.org/wiki/Sheep" title="photo" id="img_2-1"></a>
+        </div>  
+        <div class="square img_2-2">
+            <a class="click" href="http://en.wikipedia.org/wiki/Goat" title="photo" id="img_2-2"></a>
+        </div>
+        <div class="square img_2-3">
+            <a class="click" href="http://en.wikipedia.org/wiki/Chicken" title="photo" id="img_2-3"></a>
+
+        </div>
+
+        <!-- 3rd row responsive images in background with centered content -->
+
+        <div class="square img_3-1">
+            <a class="click" href="http://en.wikipedia.org/wiki/Turkey_%28bird%29" title="photo" id="img_3-1"></a>
+        </div>
+        <div class="square img_3-2">
+            <a class="click" href="http://en.wikipedia.org/wiki/Donkey" title="photo" id="img_3-2"></a>
+        </div>
+        <div class="square img_3-3">
+            <a class="click" href="http://en.wikipedia.org/wiki/Dog" title="photo" id="img_3-3"></a>
+
+        </div>
+        </div>
+    </body>
+</html>

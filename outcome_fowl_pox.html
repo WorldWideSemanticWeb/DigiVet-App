@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="outcome_newcastle_disease.css">    
+
+        <script src="responsivevoice.js"></script>
+        <script src="jquery.min.js"></script>     
+    </head>
+    <body>
+        <h2>Outcome: Fowl Pox</h2>
+        <p>It seems that your bird has a form of Fowl Pox. No treatment is available unfortuantely, however, fowl pox is relatively slow-spreading. Thus, it is possible to vaccinate to stop an outbreak. Please click on one of the images below to contact a suitable veterinarian about vaccinations and to help them keep track of this disease.</p>
+        
+        <textarea id="text">It seems that your guinea fowl has a form of Fowl Pox. No treatment is available unfortuantely, however, fowl pox is relatively slow-spreading. Thus, it is possible to vaccinate to stop an outbreak. Please click on one of the images below to contact a suitable veterinarian about vaccinations and to help them keep track of this disease..</textarea>
+
+        <select id="voiceselection"></select> 
+
+        <input 
+        onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+        type="button" 
+        class="button"
+        />
+
+        <script>
+        //Populate voice selection dropdown
+        var voicelist = responsiveVoice.getVoices();
+
+        var vselect = $("#voiceselection");
+
+        $.each(voicelist, function() {
+                vselect.append($("<option />").val(this.name).text(this.name));
+        });
+        </script>
+        <div class="fit_screen">
+        <div class="square img_1-1">
+            <a class="click" href="http://www.dierenkliniekdewetering.nl/" title="photo" id="img_1-1"></a>
+        </div>
+        <div class="square img_1-2">
+            <a class="click" href="http://www.mcvoordieren.nl/" title="photo" id="img_1-2"></a>
+        </div>
+        </div>
+        <div class="photo_text_1">
+        <p>Veterinarian dr.Kwadwo Nkrumah</p>
+        </div>       
+        <div class="photo_text_2">
+        <p>Veterinarian dr.Ebo Annan</p>
+        </div>
+    </body>
+    
+</html>

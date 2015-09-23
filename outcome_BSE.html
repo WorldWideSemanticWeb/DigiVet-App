@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="outcome_BSE.css">    
+
+        <script src="responsivevoice.js"></script>
+        <script src="jquery.min.js"></script>     
+    </head>
+    <body>
+        <h2>Outcome: BSE/Mad Cow Disease</h2>
+        <p>It seems that your cow has BSE, a progressive degenerative disease that affects the central nervous system of cattle. The cause is unknown and unfortunately there is no known treatment for this fatal disease. The best thing to do is to seperate the sick cow from the other ones, in order to prevent possible spreading. Please select the image below to report your case and help raise awareness about this disease among veterinarians.</p>
+        
+        <textarea id="text">It seems that your cow has BSE, a progressive degenerative disease that affects the central nervous system of cattle. The cause is unknown and unfortunately there is no known treatment for this fatal disease. The best thing to do is to seperate the sick cow from the other ones, in order to prevent possible spreading. Please select the image below to report your case and help raise awareness about this disease among veterinarians.</textarea>
+
+        <select id="voiceselection"></select> 
+
+        <input 
+        onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+        type="button" 
+        class="button"
+        />
+
+        <script>
+        //Populate voice selection dropdown
+        var voicelist = responsiveVoice.getVoices();
+
+        var vselect = $("#voiceselection");
+
+        $.each(voicelist, function() {
+                vselect.append($("<option />").val(this.name).text(this.name));
+        });
+        </script>
+        <div class="fit_screen">
+        <div class="square img_1-1">
+            <a class="click" href="http://www.dierenkliniekdewetering.nl/" title="photo" id="img_1-1"></a>
+        </div>
+        </div>
+    </body>
+    
+</html>

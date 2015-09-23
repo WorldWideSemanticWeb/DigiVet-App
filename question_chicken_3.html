@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GETTING STARTED WITH BRACKETS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="question_cow_1.css">    
+
+    <script src="responsivevoice.js"></script>
+    <script src="jquery.min.js"></script>        
+   
+   
+</head>
+<body> 
+<h3>Does your bird show facial swelling? If yes, press the green part of the screen, if no, press the red part.</h3>    
+<div class='green_part'>
+    <a class="click_green" href="outome_newcastle_disease.html" title="photo" id="green"></a>
+    <textarea id="text">Does your bird show facial swelling? If yes, press the green part of the screen, if no, press the red part.</textarea>
+
+     <select id="voiceselection"></select> 
+    <input 
+    onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+    type="button" 
+    class="button"
+    />
+    
+ <script>
+    //Populate voice selection dropdown
+    var voicelist = responsiveVoice.getVoices();
+
+    var vselect = $("#voiceselection");
+
+    $.each(voicelist, function() {
+            vselect.append($("<option />").val(this.name).text(this.name)); 
+    });
+    </script>
+</div>    
+<div class='red_part'>
+    <a class="click_red" href="question_chicken_4.html" title="photo" id="red"></a>
+</div>   
+</body>
+</html>

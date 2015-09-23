@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GETTING STARTED WITH BRACKETS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="question_cow_1.css">    
+
+    <script src="responsivevoice.js"></script>
+    <script src="jquery.min.js"></script>        
+   
+   
+</head>
+<body>
+    <h3>Is this the wound that you observe on your sick animal? If yes, tap the green part. If not, tap the red part.</h3>
+   <div id="myElem">
+    <img src="cow_wound.jpg" alt="Cow Wound" style="width:50%;height:50%">    
+    </div> 
+        <script>
+$(function() {
+    $('#myElem').delay(2000).fadeOut();
+    $('#realpage').delay(1000).fadeIn();
+});
+        </script>
+    
+<div class='green_part'>
+    <a class="click_green" href="question_cow_4.html" title="photo" id="green"></a>
+    <textarea id="text">Is this the wound that you observe on your sick animal? If yes, tap the green part. If not, tap the red part.</textarea>
+
+     <select id="voiceselection"></select> 
+    <input 
+    onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+    type="button" 
+    class="button"
+    />
+    
+ <script>
+    //Populate voice selection dropdown
+    var voicelist = responsiveVoice.getVoices();
+
+    var vselect = $("#voiceselection");
+
+    $.each(voicelist, function() {
+            vselect.append($("<option />").val(this.name).text(this.name)); 
+    });
+    </script>
+</div>    
+<div class='red_part'>
+    <a class="click_red" href="question_cow_3.html" title="photo" id="red"></a>
+</div>   
+</body>
+</html>
