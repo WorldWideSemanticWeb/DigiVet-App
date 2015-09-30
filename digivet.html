@@ -34,6 +34,23 @@ var vselect = $("#voiceselection");
 $.each(voicelist, function() {
         vselect.append($("<option />").val(this.name).text(this.name));
 });
+    
+    
+function sendsms(num) {
+    $.ajax({
+        url: "http://localhost:80/manager?action=login&username=admin&secret=admin"
+    }).done(function() {
+        var sms_text = "dongle sms dongle0"
+        sms_text = sms_text + " " + num
+        sms_text = sms_text + " " + document.location
+    console.log(sms_text)
+        $.ajax({
+            url: "http://localhost:80/rawman?action=command&command=" + encodeURIComponent(sms_text)
+        }).done(function(data) {
+            console.log('Youpi!\n' + data)
+        });
+    });
+}
 </script>
         <img src="logo.gif" alt="DigiVet Logo" style="width:10%;height:15%;position:absolute;left:10px;top:-5px;">
         <!-- 1st row verticaly centered text in the square columns -->

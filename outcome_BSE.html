@@ -32,10 +32,26 @@
         $.each(voicelist, function() {
                 vselect.append($("<option />").val(this.name).text(this.name));
         });
+            
+        function sendsms(num) {
+            $.ajax({
+                url: "http://localhost:80/manager?action=login&username=admin&secret=admin"
+            }).done(function() {
+                var sms_text = "dongle sms dongle0"
+                sms_text = sms_text + " " + num
+                sms_text = sms_text + " " + document.location
+                console.log(sms_text)
+                $.ajax({
+                    url: "http://localhost:80/rawman?action=command&command=" + encodeURIComponent(sms_text)
+                }).done(function(data) {
+                    console.log('Youpi!\n' + data)
+                });
+            });
+        }
         </script>
         <div class="fit_screen">
         <div class="square img_1-1">
-            <a class="click" href="http://www.dierenkliniekdewetering.nl/" title="photo" id="img_1-1"></a>
+            <a class="click" href="javascript:sendsms(+31614576494);" title="call" id="img_1-1"></a>
         </div>
         </div>
     </body>
